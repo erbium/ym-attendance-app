@@ -1,0 +1,32 @@
+.top-bar {
+  background-color: $blue;
+  height: $top-bar-height;
+}
+
+.top-bar-back {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.top-bar-text {
+  line-height: $top-bar-height;
+  font-size: 1.1em;
+  color: white;
+}
+
+.index-buttons {
+  display: block;
+  margin-top: 100px;
+}
+
+.index-button {
+  font-size: 1.3em;
+  font-weight: 100;
+  padding-top: 30px;
+}
+
+#admin-button {
+  padding-top: 100px;
+  color: darken($blue, 20);
+  font-weight: 100;
+}

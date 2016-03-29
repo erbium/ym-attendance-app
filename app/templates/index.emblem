@@ -1,0 +1,10 @@
+.top-bar
+  p.top-bar-text YM - Val Verda 8th Ward
+
+.index-buttons
+  .index-button
+    link-to 'attendance/index'   class='index-button' | Attendance
+  .index-button
+    link-to 'leaderboard/index'   class='index-button' | Leaderboard
+
+p#admin-button admin
