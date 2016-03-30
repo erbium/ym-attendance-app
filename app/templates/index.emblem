@@ -7,4 +7,5 @@
   .index-button
     link-to 'leaderboard/index' id='leaderboard-btn' class='index-button' | Leaderboard
 
-p#admin-button admin
+#admin-button
+  link-to 'admin/index' | admin

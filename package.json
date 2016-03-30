@@ -19,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "ember-cli-emblem": "0.3.1",
     "ember-localstorage-adapter": "1.0.0-rc.1",
     "liquid-fire": "0.23.0",
     "ember-data": "^2.4.0",
@@ -28,7 +29,6 @@
     "ember-cli-babel": "^5.1.5",
     "ember-cli-cordova": "0.1.0-beta-2",
     "ember-cli-dependency-checker": "^1.2.0",
-    "ember-cli-emblem": "0.3.1",
     "ember-cli-font-awesome": "1.5.0",
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",

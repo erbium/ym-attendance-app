@@ -3,6 +3,7 @@ routes = [
 ,
   from: 'index', to: 'leaderboard/index'
 ,
+  from: 'index', to: 'admin/index'
 ]
 
 transitions = ->
