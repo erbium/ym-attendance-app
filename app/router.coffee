@@ -8,6 +8,9 @@ Router = Ember.Router.extend(
 Router.map ->
   @route 'leaderboard/index'
   @route 'attendance/index'
-  @route 'admin/index'
+  @route 'admin/index', ->
+    @route 'password'
+  @route 'admin/edit/index'
+  @route 'admin/quarterly-report'
 
 `export default Router`

@@ -1,11 +1,9 @@
-.top-bar.top-bar-back
-  link-to 'index' id='back-button' class='top-bar-text'
-    | {{fa-icon "angle-left"}}  &nbsp; Admin
+= back-button route='index' | Admin
 
 .index-buttons
   .index-button
-    link-to 'index' id='quarterly-report-btn' class='index-button' | Quarterly Report
+    link-to 'admin/quarterly-report' id='quarterly-report-btn' class='index-button' | Quarterly Report
   .index-button
-    link-to 'index' id='edit-btn' class='index-button' | Edit Data
+    link-to 'admin/index.password' id='edit-btn' class='index-button' | Edit Records
 
 outlet

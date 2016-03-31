@@ -2,7 +2,7 @@
 `import { module, test } from 'qunit'`
 `import startApp from 'ym-attendance/tests/helpers/start-app'`
 
-module 'Acceptance: AttendanceIndex',
+module 'Acceptance: AdminQuarterlyReport',
   beforeEach: ->
     @application = startApp()
     ###
@@ -14,15 +14,8 @@ module 'Acceptance: AttendanceIndex',
   afterEach: ->
     Ember.run @application, 'destroy'
 
-test 'visiting /attendance/index', (assert) ->
-  visit '/attendance/index'
+test 'visiting /admin/quarterly-report', (assert) ->
+  visit '/admin/quarterly-report'
 
   andThen ->
-    assert.equal currentURL(), '/attendance/index'
-
-test 'click back button', (assert) ->
-  visit '/attendance/index'
-  click 'a.top-bar-text'
-
-  andThen ->
-    assert.equal currentURL(), '/'
+    assert.equal currentURL(), '/admin/quarterly-report'

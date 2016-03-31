@@ -22,7 +22,19 @@ test 'visiting /admin/index', (assert) ->
 
 test 'click back button', (assert) ->
   visit '/admin/index'
-  click 'a#back-button'
+  click 'a.top-bar-text'
 
   andThen ->
     assert.equal currentURL(), '/'
+
+test 'quarterly report link', (assert) ->
+  visit '/admin/index'
+  click 'a#quarterly-report-btn'
+  andThen ->
+    assert.equal currentURL(), '/admin/quarterly-report'
+
+test 'edit records link', (assert) ->
+  visit '/admin/index'
+  click 'a#edit-btn'
+  andThen ->
+    assert.equal currentURL(), '/admin/index/password'

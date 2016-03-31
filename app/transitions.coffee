@@ -4,6 +4,12 @@ routes = [
   from: 'index', to: 'leaderboard/index'
 ,
   from: 'index', to: 'admin/index'
+,
+  from: 'admin/index/password', to: 'admin/edit/index'
+,
+  from: 'admin/index', to: 'admin/edit/index'
+,
+  from: 'admin/index', to: 'admin/quarterly-report'
 ]
 
 transitions = ->

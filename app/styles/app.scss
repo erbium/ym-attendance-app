@@ -10,11 +10,14 @@ $top-bar-height:   40px;
 
 // Colors
 $text-color: #000;
-$blue:    #51A7F9;
+$blue: #51A7F9;
+$red: #EC5D57;
+$green: #70BF41;
 
 
 @import
   "font-awesome",
   "base",
-  "index"
+  "index",
+  "admin"
 ;

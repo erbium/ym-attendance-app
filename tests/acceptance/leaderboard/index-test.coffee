@@ -22,7 +22,7 @@ test 'visiting /leaderboard/index', (assert) ->
 
 test 'click back button', (assert) ->
   visit '/attendance/index'
-  click 'a#back-button'
+  click 'a.top-bar-text'
 
   andThen ->
     assert.equal currentURL(), '/'
