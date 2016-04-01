@@ -23,14 +23,23 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
+I haven't tested the above, there may be some complications with Cordova in there. If so, post an issue and I'll see if I can help out.
+
 ## Running / Development
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+You can preview the app in your browser:
+
+* `EMBER_CLI_CORDOVA=0 ember serve`
+* Go to [http://localhost:4200](http://localhost:4200).
+
+Or on the phone (if you have debugging enabled and you're plugged in):
+
+* `ember cordova:build`
+* `ember cordova run`
 
 ### Code Generators
 
-Make use of the many generators for code, try `ember help generate` for more details
+Make use of the many generators for code, try `ember help generate` for more details. You'll see that the blueprints use things like coffeescript, sass, and emblem. So pay attention to the fact that this is written in those languages instead of the standard javascript, css, and handlebars.
 
 ### Running Tests
 
@@ -41,10 +50,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
