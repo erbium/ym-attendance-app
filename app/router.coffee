@@ -12,5 +12,6 @@ Router.map ->
     @route 'password'
   @route 'admin/edit/index'
   @route 'admin/quarterly-report'
+  @route 'admin/edit/new'
 
 `export default Router`

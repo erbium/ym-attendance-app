@@ -1,0 +1,5 @@
+.list-button
+  link-to route
+    |
+    span.list-button-text {{yield}}
+    span.list-button-icon class=color {{fa-icon icon-name}}
