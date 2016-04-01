@@ -1,5 +1,14 @@
 `import Ember from 'ember'`
 
-IndexRoute = Ember.Route.extend()
+indexRoute = Ember.Route.extend
+  init: ->
+    @store.findAll('quorum').then (arg) =>
+      if arg.toArray().length is 0
+        @initQuorums()
 
-`export default IndexRoute`
+  initQuorums: ->
+    quorums = ['deacons', 'teachers', 'priests']
+    for quorumName in quorums
+      @store.createRecord('quorum', {name: quorumName}).save()
+
+`export default indexRoute`
