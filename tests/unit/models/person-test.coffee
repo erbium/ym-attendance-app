@@ -2,7 +2,7 @@
 
 moduleForModel 'person', 'Unit | Model | person', {
   # Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:quorum', 'model:entry']
 }
 
 test 'it exists', (assert) ->
