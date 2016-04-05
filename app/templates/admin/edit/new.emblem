@@ -14,9 +14,8 @@ form submit="submitPerson"
     tr.form-row
       td.form-label
         label Quorum:
-      td.form-input
-        power-select class='form-input' options=quorums selected=quorum onchange=(action (mut quorum)) as |name|
-          name
+      td.form-input.select
+        simple-select class='form-input' content=quorumOpts selection=selectedQuorum optionLabelPath="name" action=(action (mut selectedQuorum))
     tr.form-row
       td
         a#cancel-btn click='cancelPerson' cancel

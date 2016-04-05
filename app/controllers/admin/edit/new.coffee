@@ -2,12 +2,10 @@
 
 AdminEditNewController = Ember.Controller.extend(
   init: ->
-    @store.findAll('quorum').then (arg) =>
-      quorums = arg.toArray()
-      this.quorums = for quorum in quorums
-        quorum.get('name')
+    @store.findAll('quorum').then (quorums) =>
+      @quorumOpts = quorums.toArray()
+      @selectedQuorum = @quorumOpts[0]
 
-  quorum: 'deacons'
   displayError: false
 
   actions:
@@ -16,9 +14,8 @@ AdminEditNewController = Ember.Controller.extend(
       @transitionToRoute '/admin/edit/index'
 
     submitPerson: ->
-      query = @store.query('quorum',  { name: @quorum })
-      query.then (record) =>
-        @quorumObj = record.toArray()[0]
+      @store.find('quorum', @selectedQuorum.id).then (quorumObj) =>
+        @quorumObj = quorumObj
         person = @get('model')
         name = person.get('name')
         @checkPersonName(person) if name and !!name.trim()

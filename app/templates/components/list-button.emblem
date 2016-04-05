@@ -1,6 +1,6 @@
 .list-button
   if item
-    link-to route item
+    link-to route item.name
       |
       span.list-button-text {{yield}}
       span.list-button-icon class=color {{fa-icon icon-name}}

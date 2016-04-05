@@ -19,26 +19,24 @@
   margin-left: -20px;
 }
 
-#action-btns{
-  text-align: left;
-}
-
 
 #cancel-btn {
   font-size: 18px;
   color: darken($red, 20);
+  margin-top: 280px;
   position: relative;
-  bottom: -15px;
-  left: 30px;
+  left: 20px;
 }
 
 #create-btn {
+  margin-top: 250px;
   position: relative;
   left: 40px;
 }
 
 #name-error {
-  margin-top: 100px;
+  position: relative;
+  top: -300px;
   color: $red;
   font-size: 24px;
 }

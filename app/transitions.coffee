@@ -12,6 +12,8 @@ routes = [
   from: 'admin/index', to: 'admin/quarterly-report'
 ,
   from: 'admin/edit/index', to: 'admin/edit/new'
+,
+  from: 'admin/edit/index', to: 'admin/edit/person'
 ]
 
 transitions = ->
