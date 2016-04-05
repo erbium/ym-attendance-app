@@ -17,7 +17,7 @@ test 'it renders', (assert) ->
 
   # Template block usage:
   @render hbs """
-    {{#back-button}}
+    {{#back-button route='index'}}
       template block text
     {{/back-button}}
   """

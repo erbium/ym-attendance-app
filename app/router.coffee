@@ -14,4 +14,6 @@ Router.map ->
   @route 'admin/quarterly-report'
   @route 'admin/edit/new'
 
+  @route 'admin/edit/person', { path: 'admin/edit/person/:person_name'}
+
 `export default Router`

@@ -1,5 +1,11 @@
 .list-button
-  link-to route
-    |
-    span.list-button-text {{yield}}
-    span.list-button-icon class=color {{fa-icon icon-name}}
+  if item
+    link-to route item
+      |
+      span.list-button-text {{yield}}
+      span.list-button-icon class=color {{fa-icon icon-name}}
+  else
+    link-to route
+      |
+      span.list-button-text {{yield}}
+      span.list-button-icon class=color {{fa-icon icon-name}}

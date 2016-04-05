@@ -1,3 +1,7 @@
 .top-bar.top-bar-back
-  link-to route class='top-bar-text'
-    | {{fa-icon "angle-left"}}  &nbsp; {{yield}}
+  if route
+    link-to route class='top-bar-text'
+      | {{fa-icon "angle-left"}}  &nbsp; {{yield}}
+
+  if action
+    a.top-bar-text {{fa-icon "angle-left"}}  &nbsp; {{yield}}

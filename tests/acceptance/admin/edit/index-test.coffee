@@ -22,7 +22,7 @@ test 'visiting /admin/edit/index', (assert) ->
 
 test 'Create new person link', (assert) ->
   visit '/admin/edit/index'
-  click 'span.list-button-icon'
+  click 'span.list-button-text:first'
   andThen ->
     assert.equal currentURL(), '/admin/edit/new'
 
@@ -32,3 +32,16 @@ test 'click back button', (assert) ->
 
   andThen ->
     assert.equal currentURL(), '/admin/index'
+
+test 'click on person', (assert) ->
+  visit '/admin/edit/index'
+  click 'span.list-button-text:first'
+  fillIn('input.form-input', 'Fred')
+  click 'button#create-btn'
+  click 'span.list-button-text:eq(1)'
+
+  andThen ->
+    # check to see if url matches pattern
+    pattern = /\/admin\/edit\/person\/.*/
+    result = currentURL().match(pattern)
+    assert.ok result

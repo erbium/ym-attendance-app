@@ -1,3 +1,8 @@
 = back-button route='admin/index' | Edit
 
-= list-button route='admin/edit/new' icon-name='plus' color='green' | Create New
+= list-button route='admin/edit/new' icon-name='plus' color='green'
+  | Create New
+
+each model as |person|
+  = list-button route='admin/edit/person' item=person icon-name='arrow-right' color='blue'
+    | {{person.name}}

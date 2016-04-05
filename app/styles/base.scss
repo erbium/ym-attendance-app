@@ -10,10 +10,15 @@ html, body {
 a {
   text-decoration: none;
   color: black;
+  display: block; //make whole anchor clickable even with floats
 }
 
 p {
   margin: 0;
+}
+
+table {
+  float: none;
 }
 
 input[type="text"] {
@@ -23,9 +28,7 @@ input[type="text"] {
   margin-right: auto;
   font-family: sans-serif;
   font-size: 18px;
-  appearance: none;
   box-shadow: none;
-  border-radius: none;
 
   padding: 10px;
   border: none;
@@ -41,4 +44,25 @@ input[type="text"]:focus {
 
 input:focus::-webkit-input-placeholder {
   color: transparent;
+}
+
+.ember-power-select {
+  width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 20px;
+  background: $green;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #70BF41;
+  text-decoration: none;
 }

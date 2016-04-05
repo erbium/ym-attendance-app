@@ -1,1 +1,27 @@
-= back-button route='admin/edit/index' | New Person
+if model.name
+  = back-button action='cancelPerson' | {{model.name}}
+else
+  = back-button action='cancelPerson' | New Member
+
+form submit="submitPerson"
+  table.table-form align="right"
+    tr.form-row
+      td.form-label
+        label Name:
+      td.form-input
+        =input id='name-input' class='form-input' value=model.name autocomplete="off"
+
+    tr.form-row
+      td.form-label
+        label Quorum:
+      td.form-input
+        power-select class='form-input' options=quorums selected=quorum onchange=(action (mut quorum)) as |name|
+          name
+    tr.form-row
+      td
+        a#cancel-btn click='cancelPerson' cancel
+      td
+        button.btn#create-btn type="submit" Create
+
+if displayError
+  p#name-error That name is already in use.
