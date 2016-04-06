@@ -1,4 +1,4 @@
-= back-button route='admin/edit/index' | {{model.name}}
+= back-button action='cancelUpdate' | {{model.name}}
 
 .group-heading
   p info
@@ -18,9 +18,9 @@ form submit="submitPerson"
         simple-select class='form-input' content=quorumOpts selection=selectedQuorum optionLabelPath="name" action=(action (mut selectedQuorum))
     tr.form-row
       td
-        a#cancel-btn click='deletePerson' delete
+        a.red-btn click='deletePerson' delete
       td
-        button.btn#create-btn type="submit" Update
+        button.btn.green-btn type="submit" Update
 
 if displayError
   p#name-error That name is already in use.

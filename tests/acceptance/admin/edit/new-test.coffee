@@ -33,7 +33,7 @@ test 'click back button', (assert) ->
 
 test 'cancel redirects', (assert) ->
   visit '/admin/edit/new'
-  click('a#cancel-btn')
+  click('a.red-btn')
 
   andThen ->
     assert.equal currentURL(), '/admin/edit/index'
@@ -41,14 +41,14 @@ test 'cancel redirects', (assert) ->
 test 'create person creates person', (assert) ->
   visit '/admin/edit/new'
   fillIn('input.form-input', 'David')
-  click('button#create-btn')
+  click('button.green-btn')
 
   andThen ->
     assert.equal find('span.list-button-text:eq(1)').text(), 'David'
 
 test "create person doesn't create blank person", (assert) ->
   visit '/admin/edit/new'
-  click('button#create-btn')
+  click('button.green-btn')
 
   andThen ->
     assert.equal currentURL(), '/admin/edit/new'
@@ -57,7 +57,7 @@ test "create person doesn't create blank person", (assert) ->
 test "create person doesn't create white space person", (assert) ->
   visit '/admin/edit/new'
   fillIn('input.form-input', '    ')
-  click('button#create-btn')
+  click('button.green-btn')
 
   andThen ->
     assert.equal currentURL(), '/admin/edit/new'
@@ -65,10 +65,10 @@ test "create person doesn't create white space person", (assert) ->
 test "create person doesn't create duplicate, displays error", (assert) ->
   visit '/admin/edit/new'
   fillIn('input.form-input', 'David')
-  click('button#create-btn')
+  click('button.green-btn')
   visit '/admin/edit/new'
   fillIn('input.form-input', 'David')
-  click('button#create-btn')
+  click('button.green-btn')
 
   andThen ->
     assert.equal currentURL(), '/admin/edit/new'

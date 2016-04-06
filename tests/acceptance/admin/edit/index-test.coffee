@@ -37,7 +37,7 @@ test 'click on person', (assert) ->
   visit '/admin/edit/index'
   click 'span.list-button-text:first'
   fillIn('input.form-input', 'Fred')
-  click 'button#create-btn'
+  click 'button.green-btn'
   click 'span.list-button-text:eq(1)'
 
   andThen ->

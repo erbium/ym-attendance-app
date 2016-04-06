@@ -20,16 +20,16 @@
 }
 
 
-#cancel-btn {
+.red-btn {
   font-size: 18px;
   color: darken($red, 20);
-  margin-top: 280px;
+  margin-top: 53px;
   position: relative;
   left: 20px;
 }
 
-#create-btn {
-  margin-top: 250px;
+.green-btn {
+  margin-top: 30px;
   position: relative;
   left: 40px;
 }

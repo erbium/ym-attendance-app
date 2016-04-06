@@ -17,6 +17,7 @@ AdminEditNewController = Ember.Controller.extend(
         @quorumObj = quorumObj
         person = @get('model')
         name = person.get('name')
+        # checkPersonName is used in multiple contexts so they pass it in.
         emberContext = this
         @checkPersonName(emberContext, person, @createPerson, @showError) if name and !!name.trim()
 

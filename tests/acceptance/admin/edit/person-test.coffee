@@ -8,10 +8,6 @@ module 'Acceptance: AdminEditPerson',
     # Clear local storage and visit index to create base quorums
     localStorage.clear()
     visit '/'
-    # Now create a test person
-    visit '/admin/edit/new'
-    fillIn('input.form-input', 'David')
-    click('button#create-btn')
     ###
     Don't return anything, because QUnit looks for a .then
     that is present on Ember.Application, but is deprecated.
@@ -22,7 +18,17 @@ module 'Acceptance: AdminEditPerson',
     Ember.run @application, 'destroy'
 
 test 'visiting /admin/edit/person', (assert) ->
-  visit '/admin/edit/person/David'
+  # Now create a test person
+  visit 'admin/edit/new'
+  fillIn('input.form-input', 'John')
+  click('button.green-btn')
+  visit 'admin/edit/person/John'
 
   andThen ->
-    assert.equal currentURL(), '/admin/edit/person/David'
+    assert.equal find('input#name-input').val(), 'John'
+
+test "Can't visit person that doesn't exist", (assert) ->
+  visit 'admin/edit/person/Frank'
+
+  andThen ->
+    assert.notEqual find('input#name-input').val(), 'Frank'
