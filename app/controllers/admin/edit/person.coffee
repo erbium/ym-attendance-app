@@ -24,6 +24,7 @@ AdminEditPersonController = Ember.Controller.extend(
 
     submitPerson: ->
       person = @get('model')
+      name = person.get('name')
       @checkPerson(person, @updatePerson, @showError) if name and !!name.trim()
 
     cancelUpdate: ->
