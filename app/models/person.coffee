@@ -10,7 +10,24 @@ Person = DS.Model.extend {
     total = 0
     for entry in @get('entries').toArray()
       total += entry.get('serviceHours')
-    total  
+    total
+
+  totalNames: Ember.computed 'entries', ->
+    total = 0
+    for entry in @get('entries').toArray()
+      total += entry.get('templeNames')
+    total
+
+  todayInWords: Ember.computed '', ->
+    date = new Date()
+    month = date.toLocaleString('en-us', { month: 'long'})
+    day = date.getDate()
+    "#{month} #{day}"
+
+  hereToday: Ember.computed 'entries', ->
+    dates = for entry in @get('entries').toArray()
+      entry.get('dateWords')
+    @get('todayInWords') in dates
 }
 
 `export default Person`

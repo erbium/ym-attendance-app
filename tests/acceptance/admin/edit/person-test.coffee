@@ -21,7 +21,7 @@ test 'visiting /admin/edit/person', (assert) ->
   # Now create a test person
   visit 'admin/edit/new'
   fillIn('input.form-input', 'John')
-  click('button.green-btn')
+  click('button.submit-btn')
   visit 'admin/edit/person/John'
 
   andThen ->

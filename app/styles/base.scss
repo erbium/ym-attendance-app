@@ -21,6 +21,13 @@ table {
   float: none;
 }
 
+input, input:disabled {
+  -webkit-appearance: none;
+  color: inherit;
+  background-color: inherit;
+  padding: inherit;
+}
+
 input[type="text"] {
   display: block;
   width: 200px;
@@ -45,6 +52,17 @@ input[type="text"]:focus {
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// input[type=number] {
+//     -webkit-appearance: none;
+//     margin: 0;
+// }
 
 select{
     height: 40px;

@@ -20,7 +20,7 @@ form submit="submitPerson"
       td
         a.red-btn click='cancelPerson' cancel
       td
-        button.btn.green-btn type="submit" Create
+        button.btn.submit-btn type="submit" Create
 
 if displayError
-  p#name-error That name is already in use.
+  p#name-error That name is already in use

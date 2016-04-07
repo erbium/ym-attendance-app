@@ -1,0 +1,11 @@
+= back-button route='attendance/index'| {{model.name}}
+
+p.page-heading Year Total
+
+p.number-label Service Hours
+
+p.number-input = model.totalHours
+
+p.number-label Temple Names
+
+p.number-input = model.totalNames

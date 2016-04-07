@@ -9,9 +9,8 @@ AdminEditPersonController = Ember.Controller.extend(
       @quorumOpts = quorums.toArray()
 
   checkPerson: (person, success, failure) ->
-    # It would seem that shared methods need to pass around this context in order to use it...
-    emberContext = this
-    @get('newPersonController').checkPersonName(emberContext, person, success, failure)
+    # sharing a controller method, so we give it "this"
+    @get('newPersonController').checkPersonName(this, person, success, failure)
 
   showError: (emberContext) ->
     emberContext.set('displayError', true)
