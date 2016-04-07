@@ -27,8 +27,6 @@ AttendanceEditNewEntryController = Ember.Controller.extend(
     cancelEntry: ->
       @get('entry').destroyRecord()
       @transitionToRoute '/attendance/index'
-
-
 )
 
 `export default AttendanceEditNewEntryController`

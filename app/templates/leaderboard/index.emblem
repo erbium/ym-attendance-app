@@ -1,1 +1,7 @@
 = back-button route='index' | Leaderboard
+
+= list-button route='leaderboard/service_hours' icon-name='arrow-right' color='blue'
+  | Service Hours
+
+= list-button route='leaderboard/temple_names' icon-name='arrow-right' color='blue'
+  | Temple Names

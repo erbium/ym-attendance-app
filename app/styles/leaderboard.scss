@@ -1,0 +1,26 @@
+.leaderboard-wrapper {
+  margin: 0px 30px;
+}
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table tr th {
+  font-size: 28px;
+  border-bottom: solid 1px #969696;
+}
+
+.leaderboard-table td {
+  font-size: 24px;
+}
+
+.leaderboard-col {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.first-col {
+  padding-left: 30px;
+  text-align: left;
+}

@@ -1,0 +1,11 @@
+= back-button route='leaderboard/index' | Temple Names
+
+.leaderboard-wrapper
+  table.leaderboard-table
+    tr
+      th.first-col Rank
+      th Names
+    each sortedQuorums as |quorum index|
+      tr
+        td.leaderboard-col.first-col  {{rank-index index}}. {{quorum.capName}}
+        td.leaderboard-col = quorum.totalNames
