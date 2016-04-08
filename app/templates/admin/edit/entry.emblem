@@ -1,1 +1,18 @@
-= back-button route="admin/edit/person" routeParam=model.person.name | {{model.dateWords}}
+= back-button action="cancelEntry" | {{model.dateWords}}
+
+form submit="updateEntry"
+  p.number-label Entry Date
+  = pikaday-input value=model.createdAt format='MMMM D' readonly="true" id='pikaday-input'
+
+  p.number-label Service Hours
+  =input type="number" id='service-hours-input' focus-in=(action "focusedElement" 'service-hours-input') focus-out=( action 'blurredElement' 'service-hours-input') class='number-input' value=model.serviceHours autocomplete="off"
+
+  p.number-label Temple Names
+  =input type="number" id='temple-names-input' focus-in=(action "focusedElement" 'temple-names-input') focus-out=( action 'blurredElement' 'temple-names-input') class='number-input' value=model.templeNames autocomplete="off"
+
+  table.table-form align="right"
+    tr.form-row
+      td
+        a.red-btn click='deleteEntry' delete
+      td
+        button.btn.submit-btn type="submit" Update

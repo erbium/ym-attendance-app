@@ -35,6 +35,8 @@ AdminEditPersonController = Ember.Controller.extend(
       name = person.get('name')
       if confirm("Are you sure you want to delete #{name}?")
         quorum = person.get('quorum')
+        for entry in person.get('entries').toArray()
+          entry.destroyRecord()
         person.destroyRecord()
         quorum.save()
         @transitionToRoute '/admin/edit/index'
