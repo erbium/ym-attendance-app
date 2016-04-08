@@ -1,7 +1,7 @@
 = back-button action='cancelUpdate' | {{model.name}}
 
 .group-heading
-  p infos
+  p info
 
 form submit="submitPerson"
   table.table-form align="right"
@@ -28,3 +28,7 @@ if displayError
 
 .group-heading
   p entries
+
+each model.entries as |entry|
+  = list-button route='admin/edit/entry' routeParam=entry.id icon-name='arrow-right' color='blue'
+    | {{entry.dateWords}}

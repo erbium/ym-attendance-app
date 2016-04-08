@@ -13,6 +13,7 @@ Router.map ->
   @route 'admin/quarterly-report'
   @route 'admin/edit/new'
   @route 'admin/edit/person', { path: 'admin/edit/person/:person_name'}
+  @route 'admin/edit/entry', { path: 'admin/edit/entry/:entry_id'}
 
   # ATTENDANCE
   @route 'attendance/index'

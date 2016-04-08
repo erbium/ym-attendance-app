@@ -4,7 +4,6 @@ AdminEditPersonController = Ember.Controller.extend(
   newPersonController: Ember.inject.controller('admin/edit/new')
 
   init: ->
-    @set('displayError', false)
     @store.findAll('quorum').then (quorums) =>
       @quorumOpts = quorums.toArray()
 

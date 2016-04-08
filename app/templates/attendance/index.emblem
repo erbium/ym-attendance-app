@@ -1,9 +1,9 @@
 = back-button route='index' | Attendance
 
 each notHere as |person|
-  = list-button route='attendance/edit/new_entry' item=person icon-name='arrow-right' color='blue'
+  = list-button route='attendance/edit/new_entry' routeParam=person.name icon-name='arrow-right' color='blue'
     | {{person.name}}
 
 each hereToday as |person|
-  = list-button route='attendance/summary' item=person icon-name='check' color='green'
+  = list-button route='attendance/summary' routeParam=person.name icon-name='check' color='green'
     | {{person.name}}

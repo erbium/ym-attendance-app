@@ -15,6 +15,8 @@ routes = [
 ,
   from: 'admin/edit/index', to: 'admin/edit/person'
 ,
+  from: 'admin/edit/person', to: 'admin/edit/entry'
+,
   from: 'attendance/index', to: 'attendance/edit/new_entry'
 ,
   from: 'attendance/edit/new_entry', to: 'attendance/summary'

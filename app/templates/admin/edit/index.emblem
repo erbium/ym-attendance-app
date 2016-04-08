@@ -4,5 +4,5 @@
   | Create New
 
 each model as |person|
-  = list-button route='admin/edit/person' item=person icon-name='arrow-right' color='blue'
+  = list-button route='admin/edit/person' routeParam=person.name icon-name='arrow-right' color='blue'
     | {{person.name}}

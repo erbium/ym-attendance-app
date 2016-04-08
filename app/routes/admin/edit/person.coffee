@@ -10,6 +10,7 @@ AdminEditPersonRoute = Ember.Route.extend(
     @_super(controller, model);
     # select model's actual quorum
     @controllerFor('admin/edit/person').send('selectQuorum')
+    controller.set('displayError', false)
 )
 
 `export default AdminEditPersonRoute`
