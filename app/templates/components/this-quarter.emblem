@@ -1,0 +1,16 @@
+.container
+  .underline
+    h1 = header
+    h4 = quarterMonths
+
+  .vertical-space
+    h3 Number of young men who attended at least once this quarter
+
+  .vertical-space
+    h2 = attendanceRatio
+
+  .vertical-space
+    h3 Names of those who missed
+
+  .vertical-space
+    h4 = didntAttend

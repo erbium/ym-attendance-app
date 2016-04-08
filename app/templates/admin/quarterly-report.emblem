@@ -1,1 +1,3 @@
 = back-button route='admin/index' | Quarterly Report
+
+= this-quarter people=model
