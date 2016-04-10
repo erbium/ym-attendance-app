@@ -19,17 +19,25 @@
   margin-left: -20px;
 }
 
+.form-cancel {
+  padding-top: 50px;
+}
 
 .red-btn {
   font-size: 18px;
   color: darken($red, 20);
-  margin-top: 63px;
   position: relative;
   left: 20px;
+  padding: 6px 8px;
+  border: solid 1px #969696;
+  border-radius: 4px;
+}
+
+.form-submit {
+  padding-top: 40px;
 }
 
 .submit-btn {
-  margin-top: 40px;
   position: relative;
   left: 40px;
 }

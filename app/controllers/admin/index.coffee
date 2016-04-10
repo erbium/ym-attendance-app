@@ -2,9 +2,6 @@
 
 AdminIndexController = Ember.Controller.extend(
   actions:
-    goTo: (route) ->
-      @transitionToRoute route
-
     checkInternetConnection: ->
       @set('isOnline', false)
       promise = new Ember.RSVP.Promise (resolve, reject) ->

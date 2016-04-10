@@ -1,8 +1,10 @@
 `import Ember from 'ember'`
 
 # This function receives the params `params, hash`
-rankIndex = (index) ->
-  index[0] + 1
+rankIndex = (args) ->
+  index = args[0]
+  ranksArray = args[1]
+  ranksArray[index]
 
 RankIndexHelper = Ember.Helper.helper rankIndex
 

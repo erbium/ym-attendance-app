@@ -12,7 +12,7 @@ form submit="updateEntry"
 
   table.table-form align="right"
     tr.form-row
-      td
+      td.form-cancel
         a.red-btn click='deleteEntry' delete
-      td
+      td.form-submit
         button.btn.submit-btn type="submit" Update

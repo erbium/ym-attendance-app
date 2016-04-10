@@ -8,7 +8,7 @@ BackupRowComponent = Ember.Component.extend(
       when @get('selected')
         'Current'
       when @get('overwrite')
-        'Overwrite'
+        'Overwrite Local'
       else
         'Restore'
 
@@ -25,7 +25,11 @@ BackupRowComponent = Ember.Component.extend(
 
   actions:
     pullDB: (key) ->
-      return if @get('selected') # don't do anything if this is the selected row
+      return if @get('selected') # don't do anything if row is selected
+      okToContinue = true
+      if @get('overwrite')
+        okToContinue = confirm("You have unsaved work on this device which will be lost if you continue. If you'd like to save it go back and press save first. Otherwise you may continue.")
+      return unless okToContinue
       fireDB = new Firebase("https://ym-attendance.firebaseio.com/")
       backup = fireDB.child(key)
       backup.once 'value', (snapshot) =>

@@ -7,5 +7,5 @@
       th Names
     each sortedQuorums as |quorum index|
       tr
-        td.leaderboard-col.first-col  {{rank-index index}}. {{quorum.capName}}
+        td.leaderboard-col.first-col  {{rank-index index ranksArray}}. {{quorum.capName}}
         td.leaderboard-col = quorum.totalNames

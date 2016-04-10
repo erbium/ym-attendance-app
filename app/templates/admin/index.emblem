@@ -2,9 +2,9 @@
 
 .index-buttons
   .index-button
-    link-to 'admin/quarterly-report' id='quarterly-report-btn' class='index-button' | Quarterly Report
+    link-to 'admin/quarterly-report' id='quarterly-report-btn' | Quarterly Report
   .index-button
-    pass-link route='admin/edit/index' action='goTo' id='edit-btn' class='index-button' | Young Men
+    link-to 'admin/edit/index' id='edit-btn' | Young Men
   if isOnline
     .index-button
-      pass-link route='admin/edit/backup' action='goTo' id='backup-btn' class='index-button' | Backup Data
+      link-to 'admin/edit/backup' id='backup-btn' | Backup Data

@@ -17,19 +17,23 @@
 
 .index-buttons {
   display: block;
-  margin-top: 100px;
+  margin: 50px 0px;
 }
 
 .index-button {
   font-size: 1.3em;
-  padding-top: 30px;
+  padding: 15px 0px;
+  margin: 40px 30px;
+  border: solid 1px #969696;
+  border-radius: 4px;
+}
+
+.admin-wrapper {
+  padding: 240px 0px 10px 0px;
 }
 
 #admin-button {
-  padding-top: 200px;
-  a {
-    color: darken($blue, 20);
-  }
+  color: $blue;
 }
 
 .list-button {

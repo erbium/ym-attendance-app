@@ -3,7 +3,6 @@
 PassLinkComponent = Ember.Component.extend(
   errorVisible: false
   passwordVisible: false
-  routing: Ember.inject.service('-routing')
 
   actions:
     togglePassword: ->

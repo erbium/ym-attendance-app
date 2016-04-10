@@ -17,9 +17,9 @@ form submit="submitPerson"
       td.form-input.select
         simple-select class='form-input' content=quorumOpts selection=selectedQuorum optionLabelPath="name" action=(action (mut selectedQuorum))
     tr.form-row
-      td
-        a.red-btn click='deletePerson' delete
-      td
+      td.form-cancel
+        p.red-btn click='deletePerson' delete
+      td.form-submit
         button.btn.submit-btn type="submit" Update
 
 if displayError
