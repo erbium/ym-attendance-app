@@ -32,9 +32,3 @@ test 'quarterly report link', (assert) ->
   click 'a#quarterly-report-btn'
   andThen ->
     assert.equal currentURL(), '/admin/quarterly-report'
-
-test 'edit records link', (assert) ->
-  visit '/admin/index'
-  click 'a#edit-btn'
-  andThen ->
-    assert.equal currentURL(), '/admin/index/password'

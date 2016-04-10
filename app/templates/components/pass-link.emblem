@@ -1,0 +1,8 @@
+p click='togglePassword' {{yield}}
+if passwordVisible
+  form submit="checkPassword"
+    .admin-password
+      =input value=password placeholder="password" autocomplete="off"
+      button type="submit" id='submit-button' {{fa-icon "arrow-right"}}
+  if displayError
+    p.password-error nope

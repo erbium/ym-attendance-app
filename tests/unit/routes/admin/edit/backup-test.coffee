@@ -1,6 +1,6 @@
 `import { moduleFor, test } from 'ember-qunit'`
 
-moduleFor 'route:admin/index/password', 'Unit | Route | admin/index/password', {
+moduleFor 'route:admin/edit/backup', 'Unit | Route | admin/edit/backup', {
   # Specify the other units that are required for this test.
   # needs: ['controller:foo']
 }

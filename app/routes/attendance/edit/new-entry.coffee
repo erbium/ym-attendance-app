@@ -11,7 +11,7 @@ AttendanceEditNewEntryRoute = Ember.Route.extend(
     # create new entry and set entrySubmitted to false on new transition
     newEntry = (->
       @store.createRecord 'entry',
-        createdAt: new Date()
+        createdAt: new Date(2016,1,14)
         serviceHours: 0
         templeNames: 0
         person: @get('model')

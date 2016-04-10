@@ -1,0 +1,7 @@
+= back-button route='admin/index' | Backup
+
+each backupObjs as |backupObj|
+  = backup-row key=backupObj.key selected=backupObj.selected overwrite=overwriteState action='pullDB'
+
+unless hideLocalRow
+  = backup-row key=todayKey localRow=true action='pushDB'| Save

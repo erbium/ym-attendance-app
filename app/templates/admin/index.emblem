@@ -4,6 +4,7 @@
   .index-button
     link-to 'admin/quarterly-report' id='quarterly-report-btn' class='index-button' | Quarterly Report
   .index-button
-    link-to 'admin/index.password' id='edit-btn' class='index-button' | Edit Records
-
-outlet
+    pass-link route='admin/edit/index' action='goTo' id='edit-btn' class='index-button' | Young Men
+  if isOnline
+    .index-button
+      pass-link route='admin/edit/backup' action='goTo' id='backup-btn' class='index-button' | Backup Data

@@ -1,0 +1,4 @@
+.backup-row
+  .backup-container
+    span.backup-row-item = key
+    span.backup-row-item  class=buttonClass click="action key" id=key {{ buttonText }}

@@ -43,7 +43,7 @@ ThisQuarterComponent = Ember.Component.extend(
     Ember.String.htmlSafe(namesList)
 
   getQuarter: (date) ->
-    Math.floor( (date.getMonth() + 1) / 3 ) + 1
+    Math.floor( date.getMonth() / 3 ) + 1
 
   anyEntryInQuarter: (entries, quarter) ->
     # Create array of entries stating whether they are in this quarter.
@@ -55,6 +55,10 @@ ThisQuarterComponent = Ember.Component.extend(
   entryInQuarter: (entry, quarter) ->
     date = entry.get('createdAt')
     entryQuarter = @getQuarter(date)
+    if entry.get('id') is 'makdl'
+      console.log 'Drakes entry'
+      console.log date
+      console.log entryQuarter
     entryQuarter is quarter
 )
 
