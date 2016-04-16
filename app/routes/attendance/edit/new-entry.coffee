@@ -8,7 +8,7 @@ AttendanceEditNewEntryRoute = Ember.Route.extend(
   setupController: (controller, model) ->
     # // Call _super for default behavior
     @_super(controller, model);
-    # create new entry and set entrySubmitted to false on new transition
+    # create new entry
     newEntry = (->
       @store.createRecord 'entry',
         createdAt: new Date()
@@ -17,7 +17,6 @@ AttendanceEditNewEntryRoute = Ember.Route.extend(
         person: @get('model')
     ).property()
     controller.set('entry', newEntry)
-    controller.set('entrySubmitted', false)
 )
 
 `export default AttendanceEditNewEntryRoute`

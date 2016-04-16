@@ -11,22 +11,22 @@ AttendanceEditNewEntryController = Ember.Controller.extend(
       element = $("##{id}")
       element.val(0) if element.val() is ''
 
-    backButton: ->
-      if @get('entrySubmitted')
-        @transitionToRoute '/attendance/index'
-      else
-        @send('cancelEntry')
-
     createEntry: ->
-      @get('model').save()
+      # Get stuff
+      entry = @get('entry')
+      time = entry.get('createdAt')
+      person = @get('model')
+      # Update person to show attended today
+      person.set('lastAttended', time)
+      person.save()
+      # Save entry and go to index
       @get('entry').save().then =>
-        $("#service-hours-input").attr("disabled", true)
-        $("#temple-names-input").attr("disabled", true)
-        @set('entrySubmitted', true)
+        @transitionToRoute 'index'
 
     cancelEntry: ->
-      @get('entry').destroyRecord()
-      @transitionToRoute '/attendance/index'
+      if confirm("Go back without saving?")
+        @get('entry').destroyRecord()
+        @transitionToRoute '/attendance/index'
 )
 
 `export default AttendanceEditNewEntryController`

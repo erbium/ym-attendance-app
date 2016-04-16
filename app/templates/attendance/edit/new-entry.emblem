@@ -1,4 +1,4 @@
-= back-button action='backButton' | {{model.name}}
+= back-button action='cancelEntry' | {{model.name}}
 
 p.page-heading = entry.dateWords
 
@@ -9,13 +9,4 @@ form submit="createEntry"
   p.number-label Temple Names
   =input type="number" id='temple-names-input' focus-in=(action "focusedElement" 'temple-names-input') focus-out=( action 'blurredElement' 'temple-names-input') class='number-input' value=entry.templeNames autocomplete="off"
 
-  unless entrySubmitted
-    button.btn.done-btn type="submit" Done
-
-if entrySubmitted
-  p.green-txt submitted {{fa-icon "check"}}
-  .after-submit
-    link-to 'attendance/index' class='blue-btn'
-      | {{fa-icon "angle-left"}}  &nbsp; Back
-    link-to 'attendance/summary' model.name class='blue-btn'
-      | Year Summary &nbsp; {{fa-icon "angle-right"}}
+  button.btn.done-btn type="submit" Done

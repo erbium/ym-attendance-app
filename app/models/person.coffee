@@ -2,6 +2,7 @@
 
 Person = DS.Model.extend {
   name: DS.attr('string')
+  lastAttended: DS.attr('date')
 
   quorum: DS.belongsTo('quorum', { async: false} )
   entries: DS.hasMany('entry', { async: false, dependent: 'destroy'} )
@@ -17,17 +18,6 @@ Person = DS.Model.extend {
     for entry in @get('entries').toArray()
       total += entry.get('templeNames')
     total
-
-  todayInWords: Ember.computed '', ->
-    date = new Date()
-    month = date.toLocaleString('en-us', { month: 'long'})
-    day = date.getDate()
-    "#{month} #{day}"
-
-  hereToday: Ember.computed 'entries', ->
-    dates = for entry in @get('entries').toArray()
-      entry.get('dateWords')
-    @get('todayInWords') in dates
 }
 
 `export default Person`

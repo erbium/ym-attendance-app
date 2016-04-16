@@ -2,10 +2,9 @@
   p.top-bar-text YM - Val Verda 8th Ward
 
 .index-buttons
-  .index-button
-    link-to 'attendance/index' id='attendance-btn' | Attendance
-  .index-button
-    link-to 'leaderboard/index' id='leaderboard-btn' | Leaderboard
+  link-to 'attendance/index' class='index-button' id='attendance-btn' | Attendance
+
+  link-to 'leaderboard/index' class='index-button' id='leaderboard-btn' | Leaderboard
 
 .admin-wrapper
   pass-link route='admin/index' action='goTo' id='admin-button' | admin
