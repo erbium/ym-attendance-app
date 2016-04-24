@@ -9,7 +9,9 @@ AttendanceEditNewEntryController = Ember.Controller.extend(
 
     blurredElement: (id) ->
       element = $("##{id}")
-      element.val(0) if element.val() is ''
+      if element.val() is ''
+        element.val(0)
+        element.trigger('change')
 
     createEntry: ->
       # Get stuff
@@ -19,7 +21,9 @@ AttendanceEditNewEntryController = Ember.Controller.extend(
       # Update person to show attended today
       person.set('lastAttended', time)
       person.save()
-      # Save entry and go to index
+      # Force null values to zeros
+
+      #Save entry and go to index
       @get('entry').save().then =>
         @transitionToRoute 'index'
 

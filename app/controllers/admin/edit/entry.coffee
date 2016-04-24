@@ -23,7 +23,13 @@ AdminEditEntryController = Ember.Controller.extend(
       entry = @get('model')
       dateWords = entry.get('dateWords')
       if confirm("Are you sure you want to delete #{dateWords} entry?")
+        # Get person, and bump back his lastAttended date
         person = entry.get('person')
+        createdAt = entry.get('createdAt')
+        bumpBack = createdAt.setDate(createdAt.getDate() - 2)
+        person.set('lastAttended', bumpBack)
+
+        # Now destroy record and save person
         entry.destroyRecord()
         person.save()
         @transitionToRoute('admin/edit/person', person)
