@@ -2,10 +2,12 @@
 
 LeaderboardServiceHoursController = Ember.Controller.extend(
   sortProps: ['totalHours:desc']
-  sortedQuorums: Ember.computed.sort('model', 'sortProps')
+  sortedPeople: Ember.computed.sort('model', 'sortProps')
+  firstFivePeople: Ember.computed.filter 'sortedPeople', (person, index) ->
+    return (index < 5)
 
   ranksArray: Ember.computed 'model.@each.totalHours', ->
-    hoursArr = for quorum in @get('sortedQuorums').toArray()
+    hoursArr = for quorum in @get('sortedPeople').toArray()
       quorum.get('totalHours')
     rank = 1
     ranksArr = for hours, index in hoursArr

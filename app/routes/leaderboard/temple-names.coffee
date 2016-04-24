@@ -2,9 +2,8 @@
 
 LeaderboardTempleNamesRoute = Ember.Route.extend(
   model: ->
-    @store.findAll('person')
     @store.findAll('entry')
-    @store.findAll('quorum')
+    @store.findAll('person')
 )
 
 `export default LeaderboardTempleNamesRoute`

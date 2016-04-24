@@ -5,7 +5,7 @@
     tr
       th.first-col Rank
       th Hours
-    each sortedQuorums as |quorum index|
+    each firstFivePeople as |person index|
       tr
-        td.leaderboard-col.first-col  {{rank-index index ranksArray}}. {{quorum.capName}}
-        td.leaderboard-col = quorum.totalHours
+        td.leaderboard-col.first-col  {{rank-index index ranksArray}}. {{person.name}}
+        td.leaderboard-col = person.totalHours

@@ -2,10 +2,12 @@
 
 LeaderboardTempleNamesController = Ember.Controller.extend(
   sortProps: ['totalNames:desc']
-  sortedQuorums: Ember.computed.sort('model', 'sortProps')
+  sortedPeople: Ember.computed.sort('model', 'sortProps')
+  firstFivePeople: Ember.computed.filter 'sortedPeople', (person, index) ->
+        return (index < 5)
 
   ranksArray: Ember.computed 'model.@each.totalNames', ->
-    namesArr = for quorum in @get('sortedQuorums').toArray()
+    namesArr = for quorum in @get('sortedPeople').toArray()
       quorum.get('totalNames')
     rank = 1
     ranksArr = for names, index in namesArr
