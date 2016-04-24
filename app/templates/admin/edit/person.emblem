@@ -13,6 +13,15 @@ form submit="submitPerson"
 
     tr.form-row
       td.form-label
+        label In Ward:
+      td.form-input
+        span true
+        radio-button radioClass='radio-btn' value=true groupValue=model.inWard
+        span false
+        radio-button radioClass='radio-btn' value=false groupValue=model.inWard
+
+    tr.form-row
+      td.form-label
         label Quorum:
       td.form-input.select
         simple-select class='form-input' content=quorumOpts selection=selectedQuorum optionLabelPath="name" action=(action (mut selectedQuorum))

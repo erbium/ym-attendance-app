@@ -53,6 +53,11 @@ input, input:disabled {
   padding: inherit;
 }
 
+input.radio-btn {
+  -webkit-appearance: radio;
+  margin: 20px 30px 20px 10px;
+}
+
 input[type="text"] {
   display: block;
   width: 200px;
