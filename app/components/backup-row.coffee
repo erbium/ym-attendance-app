@@ -22,7 +22,6 @@ BackupRowComponent = Ember.Component.extend(
       else
         'btn'
 
-
   actions:
     pullDB: (key) ->
       return if @get('selected') # don't do anything if row is selected

@@ -6,7 +6,7 @@ AdminEditBackupController = Ember.Controller.extend(
       @set('hideLocalRow', false)
       @set('overwriteState', true)
       ref = new Firebase('https://ym-attendance.firebaseio.com/')
-      ref.on 'value', (snapshot) =>
+      ref.limitToFirst(2).on 'value', (snapshot) =>
         @set('backupObjs', [])
         snapshot.forEach (childSnapshot) =>
           backupObjs = @get('backupObjs')
